@@ -2,7 +2,12 @@
 Icon made by Freepik from www.flaticon.com
 */
 
-//var loginBox = document.querySelector('#memberLoginDialog');
+/**
+ TODO Make a browser action to show status, that the plugin is working
+ ensure it only gets run once
+ figure out issue with the correct URL or else it wont run
+ pretty the options up
+ */
 function onError(error) {
   console.log(`Error: ${error}`);
 }
