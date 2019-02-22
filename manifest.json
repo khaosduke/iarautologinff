@@ -17,10 +17,16 @@
     }
   ],
 
-  "browser_action": {
-   "default_icon": "icons/fire-station.svg",
-   "default_title": "IaR Auto Login",
-   "default_popup": "popup/options.html"
- }
+  "permissions": ["storage"],
+
+  "options_ui": {
+    "page": "options/options.html"
+  },
+
+ "applications": {
+    "gecko": {
+      "id": "addon@example.com"
+    }
+  }
 
 }
