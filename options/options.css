@@ -31,20 +31,3 @@ label {
   padding: 3% 2%;
   color:#a02108;
 }
-
-
-.beast:hover {
-  background-color: #CFF2F2;
-}
-
-.beast {
-  background-color: #E5F2F2;
-}
-
-.reset {
-  background-color: #FBFBC9;
-}
-
-.reset:hover {
-  background-color: #EAEA9D;
-}

@@ -26,5 +26,24 @@ function onGot(item) {
   }
 }
 
+function redirectIfNotLoginPage(requestDetails) {
+  console.log("checking...");
+  //Check to see if the login box exists on the page we're on
+  //If not , redirect to a known login page
+  if (document.querySelector('input#ddlsubsciribers') == null) {
+    //We're not on the right page, attempt to redirect
+    return {
+      redirectUrl: "https://iamresponding.com/v3/Pages/default.aspx?bypass=1"
+    };
+  }
+}
+//Check to see if we are on the right page in this domain.
+
+browser.webRequest.onBeforeRequest.addListener(
+  redirectIfNotLoginPage,
+  {urls:["*://*.iamresponding.com/*"]},
+  ["blocking"]
+);
+
 var getting = browser.storage.sync.get(['agency','username','password']);
 getting.then(onGot, onError);

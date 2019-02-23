@@ -10,9 +10,9 @@ function saveOptions(e) {
 function restoreOptions() {
 
   function setCurrentChoices(result) {
-    document.querySelector("#agencyInput").value = result['agency'] || NULL;
-    document.querySelector("#usernameInput").value = result['username'] || NULL;
-    document.querySelector("#passwordInput").value = result['password'] || NULL;
+    document.querySelector("#agencyInput").value = result['agency'] || null;
+    document.querySelector("#usernameInput").value = result['username'] || null;
+    document.querySelector("#passwordInput").value = result['password'] || null;
   }
 
   function onError(error) {

@@ -17,13 +17,24 @@
     }
   ],
 
-  "permissions": ["storage"],
+  "permissions": ["storage",
+                  "webRequest",
+                  "webRequestBlocking"
+                ],
 
   "options_ui": {
     "page": "options/options.html"
   },
 
- "applications": {
+  "browser_action": {
+    "browser_style": true,
+    "default_icon": "icons/fire-station.svg",
+    "default_title": "IaR Auto Login",
+    "default_popup": "status/status.html"
+
+  },
+
+  "applications": {
     "gecko": {
       "id": "addon@example.com"
     }

@@ -1,0 +1,20 @@
+html, body {
+  width: 300px;
+}
+
+#popup-content {
+  width:50%;
+  margin: 0 auto;
+  padding: 5% 2%;
+}
+
+.active {
+  color:green;
+  font-weight: bold;
+}
+
+.not-active {
+  color:red;
+  font-weight: bold;
+  text-align: center;
+}
