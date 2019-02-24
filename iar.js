@@ -29,7 +29,7 @@ function onGot(item) {
 
 //Check if we're logged in. The easy and stupid way, check to see if the sign out link is present...
 function isLoggedIn() {
-  return document.querySelector("#SingOut1_lnkSignOut") == null;
+  return document.querySelector("#SingOut1_lnkSignOut") != null;
 }
 
 function redirectIfNotLoginPage() {
@@ -44,6 +44,6 @@ function redirectIfNotLoginPage() {
 
 
 console.log("Loaded!");
-//redirectIfNotLoginPage();
+redirectIfNotLoginPage();
 var getting = browser.storage.sync.get(['agency','username','password']);
 getting.then(onGot, onError);
