@@ -1,18 +1,26 @@
+//variables
+
+var agency = '#agencyInput';
+var username = '#usernameInput';
+var password = '#passwordInput';
+
+
+
 function saveOptions(e) {
   e.preventDefault();
   browser.storage.sync.set({
-    agency: document.querySelector("#agencyInput").value,
-    username: document.querySelector("#usernameInput").value,
-    password: document.querySelector("#passwordInput").value
+    agency: document.querySelector(agency).value,
+    username: document.querySelector(username).value,
+    password: document.querySelector(password).value
   });
 }
 
 function restoreOptions() {
 
   function setCurrentChoices(result) {
-    document.querySelector("#agencyInput").value = result['agency'] || null;
-    document.querySelector("#usernameInput").value = result['username'] || null;
-    document.querySelector("#passwordInput").value = result['password'] || null;
+    document.querySelector(agency).value = result['agency'] || null;
+    document.querySelector(username).value = result['username'] || null;
+    document.querySelector(password).value = result['password'] || null;
   }
 
   function onError(error) {
