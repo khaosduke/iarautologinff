@@ -17,9 +17,14 @@
     }
   ],
 
+  "background" : {
+    "scripts":["background.js"]
+  },
+
   "permissions": ["storage",
                   "webRequest",
-                  "webRequestBlocking"
+                  "webRequestBlocking",
+                  "*://*.iamresponding.com/*"
                 ],
 
   "options_ui": {

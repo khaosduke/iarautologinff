@@ -8,6 +8,7 @@ Icon made by Freepik from www.flaticon.com
  figure out issue with the correct URL or else it wont run
  pretty the options up
  */
+
 function onError(error) {
   console.log(`Error: ${error}`);
 }
@@ -26,24 +27,23 @@ function onGot(item) {
   }
 }
 
-function redirectIfNotLoginPage(requestDetails) {
+//Check if we're logged in. The easy and stupid way, check to see if the sign out link is present...
+function isLoggedIn() {
+  return document.querySelector("#SingOut1_lnkSignOut") == null;
+}
+
+function redirectIfNotLoginPage() {
   console.log("checking...");
   //Check to see if the login box exists on the page we're on
   //If not , redirect to a known login page
-  if (document.querySelector('input#ddlsubsciribers') == null) {
+  if (document.querySelector('input#ddlsubsciribers') == null && !isLoggedIn() ) {
     //We're not on the right page, attempt to redirect
-    return {
-      redirectUrl: "https://iamresponding.com/v3/Pages/default.aspx?bypass=1"
-    };
+    browser.runtime.sendMessage({redirect: "https://iamresponding.com/v3/Pages/default.aspx?bypass=1"});
   }
 }
-//Check to see if we are on the right page in this domain.
 
-browser.webRequest.onBeforeRequest.addListener(
-  redirectIfNotLoginPage,
-  {urls:["*://*.iamresponding.com/*"]},
-  ["blocking"]
-);
 
+console.log("Loaded!");
+//redirectIfNotLoginPage();
 var getting = browser.storage.sync.get(['agency','username','password']);
 getting.then(onGot, onError);
