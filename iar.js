@@ -1,10 +1,7 @@
 /** IamResponding Auto login
-Icon made by Freepik from www.flaticon.com
+  Written by Wilfredo Crespo
+  Icon made by Freepik from www.flaticon.com
 */
-
-/**
- TODO Make a browser action to show status, that the plugin is working
- */
 
 /* Keeping all the variables in one place makes them easier to change in the future
    When the page it self changes.

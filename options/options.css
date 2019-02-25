@@ -31,3 +31,18 @@ label {
   padding: 3% 2%;
   color:#a02108;
 }
+
+#saved {
+  font-size:2em;
+  color:green;
+}
+
+#not-saved {
+  font-size:2em;
+  color:red;
+}
+
+
+#save-status {
+  margin:0 6%;
+}

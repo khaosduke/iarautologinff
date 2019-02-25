@@ -13,6 +13,8 @@ function saveOptions(e) {
     username: document.querySelector(username).value,
     password: document.querySelector(password).value
   });
+
+  document.querySelector("#saved").innerHTML = "Saved!";
 }
 
 function restoreOptions() {
@@ -24,7 +26,8 @@ function restoreOptions() {
   }
 
   function onError(error) {
-    console.log(`Error: ${error}`);
+    document.querySelector("#not-saved").innerHTML = "Credentials Not Saved :("
+
   }
 
   var getting = browser.storage.sync.get(["agency","username","password"]);
