@@ -41,7 +41,7 @@
 
   "applications": {
     "gecko": {
-      "id": "addon@example.com"
+      "id": "@iarautologin"
     }
   }
 

@@ -12,7 +12,8 @@ var usernameField = 'input#memberfname';
 var passwordField = 'input#memberpwd';
 var loginButton = '#login';
 
-var loginPageUrl =  "https://iamresponding.com/v3/Pages/default.aspx?bypass=1"
+var loginPageUrl =  "https://www.iamresponding.com/v3/Pages/memberlogin.aspx"
+
 
 function onError(error) {
   console.log(`Error: ${error}`);
@@ -34,15 +35,24 @@ function onGot(item) {
 
 //Check if we're logged in. The easy and stupid way, check to see if the sign out link is present...
 function isLoggedIn() {
-  return document.querySelector("#SingOut1_lnkSignOut") != null;
+  //return document.querySelector("#SingOut1_lnkSignOut") != null;
+  //New web page version
+  return document.querySelector(".icon-sign-out") != null;
+}
+
+function isLoginPage() {
+  return document.querySelector(agencyField) != null;
 }
 
 function redirectIfNotLoginPage() {
   //Check to see if the login box exists on the page we're on
   //If not , redirect to a known login page
-  if (document.querySelector(agencyField) == null && !isLoggedIn() ) {
+  //if (document.querySelector(agencyField) == null && !isLoggedIn() ) {
+
+  if (!isLoginPage() && !isLoggedIn()) {
     //We're not on the right page, attempt to redirect
     browser.runtime.sendMessage({redirect:loginPageUrl});
+    console.log("Got a null going here");
   }
 }
 
